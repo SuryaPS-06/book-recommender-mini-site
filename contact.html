@@ -1,10 +1,35 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Adobe Client Data Layer Implementation -->
+  <script>
+    window.adobeDataLayer = window.adobeDataLayer || [];
+    window.adobeDataLayer.push({
+      event: "pageLoad",
+      page: {
+        pageInfo: {
+          pageName: "Contact Page",
+          siteSection: "Contact",
+          language: "en",
+          pageType: "form"
+        },
+        form: {
+          formName: "Contact Us Form"
+        }
+      },
+      user: {
+        isLoggedIn: false,
+        userId: ""
+      }
+    });
+  </script>
+  <!-- End ACDL -->
+
   <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
 </head>
 <body>
@@ -31,7 +56,5 @@
   </main>
 
   <footer>
-    <p>© 2025 Book Recommender</p>
-  </footer>
-</body>
-</html>
+    <
+
