@@ -6,10 +6,26 @@
   <title>Book Recommender</title>
   <link rel="stylesheet" href="style.css" />
 
+  <!-- ✅ DIGITAL DATA LAYER START -->
+  <script>
+    window.digitalData = {
+      page: {
+        pageName: "Home Page",
+        siteSection: "Homepage",
+        pageCategory: "Book Recommender Landing",
+        pageType: "landing",
+        language: "en"
+      },
+      user: {
+        isLoggedIn: false,
+        userId: ""
+      }
+    };
+  </script>
+  <!-- ✅ DIGITAL DATA LAYER END -->
 
-  
+  <!-- ✅ Adobe Launch (should load after digitalData is declared) -->
   <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
-  
 </head>
 <body>
   <header>
@@ -35,3 +51,4 @@
   </footer>
 </body>
 </html>
+
