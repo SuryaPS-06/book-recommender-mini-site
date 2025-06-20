@@ -5,7 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Select Genre</title>
   <link rel="stylesheet" href="style.css" />
-    <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
+
+  <!-- ACDL Implementation Start -->
+  <script>
+    window.adobeDataLayer = window.adobeDataLayer || [];
+    window.adobeDataLayer.push({
+      event: "pageLoad",
+      page: {
+        pageInfo: {
+          pageName: "Genre Selection Page",
+          siteSection: "Genres",
+          language: "en",
+          pageType: "category"
+        },
+        category: {
+          primaryCategory: "Book Genres"
+        }
+      },
+      user: {
+        isLoggedIn: false,
+        userId: ""
+      }
+    });
+  </script>
+  <!-- ACDL Implementation End -->
+
+  <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
 </head>
 <body>
   <header>
@@ -29,3 +54,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
