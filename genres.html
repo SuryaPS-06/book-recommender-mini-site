@@ -6,11 +6,9 @@
   <title>Select Genre</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- ACDL Implementation Start -->
+  <!-- Digital Data Layer Initialization -->
   <script>
-    window.adobeDataLayer = window.adobeDataLayer || [];
-    window.adobeDataLayer.push({
-      event: "pageLoad",
+    window.digitalData = window.digitalData || {
       page: {
         pageInfo: {
           pageName: "Genre Selection Page",
@@ -25,10 +23,10 @@
       user: {
         isLoggedIn: false,
         userId: ""
-      }
-    });
+      },
+      events: []
+    };
   </script>
-  <!-- ACDL Implementation End -->
 
   <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
 </head>
@@ -44,12 +42,39 @@
   </header>
 
   <main>
-    <section class="genres-grid"></section>
+    <section class="genres-grid">
+      <button class="genre-button" data-genre="Fantasy">Fantasy</button>
+      <button class="genre-button" data-genre="Science Fiction">Science Fiction</button>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Book Recommender</p>
   </footer>
+
+  <script>
+    // Click tracking for digitalData
+    document.querySelectorAll('.genre-button').forEach(button => {
+      button.addEventListener('click', function () {
+        const genreName = this.getAttribute('data-genre');
+        
+        window.digitalData.events.push({
+          event: "genreClick",
+          eventInfo: {
+            eventAction: "click",
+            eventCategory: "genre selection",
+            eventLabel: genreName,
+            eventTimestamp: new Date().toISOString()
+          },
+          genre: {
+            name: genreName
+          }
+        });
+
+        console.log("Digital Data Event Fired:", digitalData.events[digitalData.events.length - 1]);
+      });
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>
