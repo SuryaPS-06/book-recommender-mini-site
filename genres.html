@@ -11,7 +11,7 @@
     window.digitalData = window.digitalData || {
       page: {
         pageInfo: {
-          pageName: "Genre Selection Page",
+          pageName: "Book Genre Selection Page",
           siteSection: "Book Genres",
           language: "en",
           pageType: "Book Category"
@@ -57,7 +57,7 @@
     <p>© 2025 Book Recommender</p>
   </footer>
 
-  <!-- Enhanced Click Tracking Script -->
+  <!-- Click Tracking Script -->
   <script>
     document.querySelectorAll('.genre-button').forEach(button => {
       button.addEventListener('click', function () {
@@ -67,7 +67,7 @@
           event: "genreClick",
           eventInfo: {
             eventAction: "click",
-            eventCategory: "genre selection",
+            eventCategory: "Book Genre Selection",
             eventLabel: genreName,
             eventTimestamp: new Date().toISOString()
           },
