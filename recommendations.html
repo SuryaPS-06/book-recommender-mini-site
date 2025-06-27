@@ -6,27 +6,36 @@
   <title>Recommendations</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- DIGITAL DATA LAYER START -->
+  <!-- ADOBE CLIENT DATA LAYER START -->
   <script>
-    window.digitalData = {
+    window.adobeDataLayer = window.adobeDataLayer || [];
+
+    adobeDataLayer.push({
       page: {
-        pageName: "Recommendations Page",
+        pageName: "Book Recommendations Page",
         siteSection: "Recommendations",
-        pageCategory: "Book Suggestions",
+        pageCategory: "Book Recommender Page",
         pageType: "content",
         language: "en"
       },
       user: {
         isLoggedIn: false,
-        userId: ""
+        userId: "",
+        profile: {
+          name: "",
+          email: "",
+          mobileNumber: "",
+          customerType: "guest"
+        }
       },
       recommendations: {
         count: 0,
         genreSelected: ""
-      }
-    };
+      },
+      events: []
+    });
   </script>
-  <!-- DIGITAL DATA LAYER END -->
+  <!-- ADOBE CLIENT DATA LAYER END -->
 
   <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
 </head>
@@ -36,13 +45,31 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="genres.html">Genres</a>
-      <a href="recommendations.html">Recommendations</a>
+      <a href="recommendations.html" class="active">Recommendations</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="recommendations-grid"></section>
+    <section class="recommendations-grid">
+      <!-- Example book items -->
+      <div class="book-card">
+        <h3>The Midnight Library</h3>
+        <p>By Matt Haig</p>
+      </div>
+      <div class="book-card">
+        <h3>Dune</h3>
+        <p>By Frank Herbert</p>
+      </div>
+      <div class="book-card">
+        <h3>Circe</h3>
+        <p>By Madeline Miller</p>
+      </div>
+      <div class="book-card">
+        <h3>Project Hail Mary</h3>
+        <p>By Andy Weir</p>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -52,3 +79,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
