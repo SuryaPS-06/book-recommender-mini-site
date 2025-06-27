@@ -66,26 +66,7 @@
   <footer>
     <p>© 2025 Book Recommender</p>
   </footer>
-
-  <!-- Optional: Track form submission as event -->
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      // Prevent actual form submission for demo purposes
-      e.preventDefault();
-
-      // Push form submission event to Adobe Data Layer
-      adobeDataLayer.push({
-        event: "formSubmitted",
-        form: {
-          formName: "Contact Us Form",
-          formType: "contact",
-          formStatus: "submitted"
-        }
-      });
-
-      console.log("Form submitted event pushed to adobeDataLayer.");
-    });
-  </script>
+  
 </body>
 </html>
 
