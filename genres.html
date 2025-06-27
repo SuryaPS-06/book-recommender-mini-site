@@ -57,7 +57,7 @@
     <p>© 2025 Book Recommender</p>
   </footer>
 
-  <!-- Click Tracking Script -->
+  <!-- DDL for Click Call -->
   <script>
     document.querySelectorAll('.genre-button').forEach(button => {
       button.addEventListener('click', function () {
@@ -68,8 +68,7 @@
           eventInfo: {
             eventAction: "click",
             eventCategory: "Book Genre Selection",
-            eventLabel: genreName,
-            eventTimestamp: new Date().toISOString()
+            eventLabel: genreName
           },
           genre: {
             name: genreName
