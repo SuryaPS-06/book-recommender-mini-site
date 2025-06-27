@@ -12,14 +12,25 @@
       page: {
         pageName: "Home Page",
         siteSection: "Homepage",
-        pageCategory: "Book Recommender Landing",
+        pageCategory: "Book Recommender Homepage ",
         pageType: "landing",
         language: "en"
       },
       user: {
         isLoggedIn: false,
-        userId: ""
-      }
+        userId: "",
+        profile: {
+          name: "",
+          email: "",
+          customerType: "guest", // or "registered"
+        }
+      },
+      session: {
+        sessionId: Math.random().toString(36).substring(2, 15),
+        loginStatus: "guest",
+        timestamp: new Date().toISOString()
+      },
+      events: []
     };
   </script>
   <!-- DIGITAL DATA LAYER END -->
