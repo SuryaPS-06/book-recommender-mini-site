@@ -22,12 +22,17 @@
       },
       user: {
         isLoggedIn: false,
-        userId: ""
+        userId: "",
+        profile: {
+          name: "",
+          email: ""
+        }
       },
       events: []
     };
   </script>
 
+  <!-- Adobe Launch or other tag manager (optional, your existing script) -->
   <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
 </head>
 <body>
@@ -52,13 +57,13 @@
     <p>© 2025 Book Recommender</p>
   </footer>
 
+  <!-- Enhanced Click Tracking Script -->
   <script>
-    // Click tracking for digitalData
     document.querySelectorAll('.genre-button').forEach(button => {
       button.addEventListener('click', function () {
         const genreName = this.getAttribute('data-genre');
-        
-        window.digitalData.events.push({
+
+        const eventData = {
           event: "genreClick",
           eventInfo: {
             eventAction: "click",
@@ -68,15 +73,19 @@
           },
           genre: {
             name: genreName
-          }
-        });
+          },
+          page: window.digitalData.page || {},
+          user: window.digitalData.user || {}
+        };
 
-        console.log("Digital Data Event Fired:", digitalData.events[digitalData.events.length - 1]);
+        window.digitalData.events.push(eventData);
+
+        console.log("Digital Data Event Fired:", eventData);
       });
     });
   </script>
 
+  <!-- Optional: Your external JS -->
   <script src="script.js"></script>
 </body>
 </html>
-
