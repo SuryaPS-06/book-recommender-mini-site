@@ -64,6 +64,25 @@
     <p>© 2025 Book Recommender</p>
   </footer>
   
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var getStartedBtn = document.querySelector('.hero .btn');
+
+    if (getStartedBtn) {
+      getStartedBtn.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "get_started_click",
+          buttonName: "Get Started",
+          pageName: "Home Page",
+          pageCategory: "Book Recommender Homepage",
+          destinationPage: "genres.html"
+        });
+      });
+    }
+  });
+</script>
+  
 </body>
 </html>
 
