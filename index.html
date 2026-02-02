@@ -35,7 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           gender: "Male",
           mobileNumber: "7525885533",
           email: "xyz@gmail.com",
-          customerType: "guest", // or "registered"
+          customerType: "guest"
         }
       },
       events: []
@@ -46,6 +46,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
 </head>
 <body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4FGMNPX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
     <h1>📚 Book Recommender</h1>
     <nav>
@@ -68,24 +76,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p>© 2025 Book Recommender</p>
   </footer>
 
+  <!-- GTM PAGE VIEW DATALAYER PUSH -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var getStartedBtn = document.querySelector('.hero .btn');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "page_view",
+      pageName: "Home Page",
+      siteSection: "Homepage",
+      pageCategory: "Book Recommender Homepage",
+      pageType: "landing",
+      language: "en"
+    });
+  </script>
 
-    if (getStartedBtn) {
-      getStartedBtn.addEventListener('click', function () {
+  <!-- GTM CLICK TRACKING FOR ALL CLICKS -->
+  <script>
+    document.addEventListener("click", function (event) {
+      var element = event.target.closest("a, button");
+
+      if (element) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: "get_started_click",
-          buttonName: "Get Started",
-          pageName: "Home Page",
-          pageCategory: "Book Recommender Homepage",
-          destinationPage: "genres.html"
+          event: "generic_click",
+          clickText: element.innerText.trim(),
+          clickTag: element.tagName,
+          clickUrl: element.getAttribute("href") || "",
+          pageName: "Home Page"
         });
-      });
-    }
-  });
-</script>
+      }
+    });
+  </script>
 
 </body>
 </html>
