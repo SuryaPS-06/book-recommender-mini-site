@@ -1,112 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N4FGMNPX');</script>
-<!-- End Google Tag Manager -->
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Recommender</title>
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- DIGITAL DATA LAYER START -->
-  <script>
-    window.digitalData = {
-      page: {
-        pageName: "Home Page",
-        siteSection: "Homepage",
-        pageCategory: "Book Recommender Homepage ",
-        pageType: "landing",
-        language: "en"
-      },
-      user: {
-        profile: {
-          userId: "20072001",
-          firstName: "Bhanu",
-          middleName: "Pratap",
-          lastName: "Singh",
-          age: "26",
-          gender: "Male",
-          mobileNumber: "7525885533",
-          email: "xyz@gmail.com",
-          customerType: "guest"
-        }
-      },
-      events: []
-    };
-  </script>
-  <!-- DIGITAL DATA LAYER END -->
-
-  <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
+ 
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Book Recommender</title>
+ 
+    <link rel="stylesheet" href="style.css" />
+ 
+    <!-- DIGITAL DATA LAYER -->
+<script>
+        window.digitalData = {
+ 
+            page: {
+                pageName: "Home Page",
+                siteSection: "Homepage",
+                pageCategory: "Book Recommender Homepage",
+                pageType: "landing",
+                language: "en"
+            },
+ 
+            user: {
+                profile: {
+                    userId: "20072001",
+                    firstName: "Bhanu",
+                    middleName: "Pratap",
+                    lastName: "Singh",
+                    age: "26",
+                    gender: "Male",
+                    mobileNumber: "7525885533",
+                    email: "xyz@gmail.com",
+                    customerType: "guest"
+                }
+            },
+ 
+            events: [],
+ 
+            settlementStatus: []
+ 
+        };
+</script>
+ 
+    <!-- ADOBE LAUNCH -->
+<script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js"
+        async>
+</script>
+ 
 </head>
+ 
 <body>
+ 
+    <header>
+<h1>📚 Book Recommender</h1>
+ 
+        <nav>
+<a href="index.html">Home</a>
+<a href="genres.html">Genres</a>
+<a href="recommendations.html">Recommendations</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+ 
+ 
+    <main>
+<section class="hero">
+ 
+            <h2>Find Your Next Favorite Book : Surya</h2>
+ 
+            <p>
+                Select a genre to explore personalized book recommendations.
+</p>
+ 
+            <a href="genres.html" class="btn" id="getStarted">
+                Get Started
+</a>
+ 
+        </section>
+</main>
+ 
+ 
+    <footer>
+<p>© 2025 Book Recommender</p>
+</footer>
+ 
+ 
+    <!-- GET STARTED CLICK -->
+<script>
+ 
+        document.getElementById("getStarted").addEventListener("click", function () {
+ 
+            /*
+             * Settlement / Bill Reference Data
+             */
+            digitalData.settlementStatus = [
+ 
+                {
+                    bankReference: "BR001",
+                    currency: "USD",
+                  
+                    purposeCodes: [
+                        "P0102",
+                        "P0108",
+                        "P0103"
+                    ],
+ 
+                    purposeCodeCount: 3
+                },
+ 
+                {
+                    bankReference: "BR002",
+                    currency: "USD",
+ 
+                    purposeCodes: [
+                        "P0102",
+                        "P0103",
+                        "P0104"
+                    ],
+ 
+                    purposeCodeCount: 3
+                },
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N4FGMNPX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <header>
-    <h1>📚 Book Recommender</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="genres.html">Genres</a>
-      <a href="recommendations.html">Recommendations</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <h2>Find Your Next Favorite Book : Surya </h2>
-      <p>Select a genre to explore personalized book recommendations.</p>
-      <a href="genres.html" class="btn">Get Started</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Book Recommender</p>
-  </footer>
-
-  <!-- GTM PAGE VIEW DATALAYER PUSH -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "page_view",
-      pageName: "Home Page",
-      siteSection: "Homepage",
-      pageCategory: "Book Recommender Homepage",
-      pageType: "landing",
-      language: "en"
-    });
-  </script>
-
-  <!-- GTM CLICK TRACKING FOR ALL CLICKS -->
-  <script>
-    document.addEventListener("click", function (event) {
-      var element = event.target.closest("a, button");
-
-      if (element) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "generic_click",
-          clickText: element.innerText.trim(),
-          clickTag: element.tagName,
-          clickUrl: element.getAttribute("href") || "",
-          pageName: "Home Page"
+               {
+                    bankReference: "BR003",
+                    currency: "Euro",
+                  
+                    purposeCodes: [
+                        "P0102",
+                        "P0110",
+                        "P0103",
+                        "P0105"
+                    ],
+ 
+                    purposeCodeCount: 4
+                },
+ 
+                {
+                    bankReference: "BR003",
+                    currency: "Euro",
+ 
+                    purposeCodes: [
+                        "P0105"
+                    ],
+ 
+                    purposeCodeCount: 1
+                }
+ 
+            ];
+ 
+ 
+            /*
+             * Event Information
+             */
+            digitalData.events.push({
+ 
+                eventName: "get_started_click",
+ 
+                eventContext: {
+ 
+                    linkName: "Get Started",
+                    linkType: "CTA",
+                    linkUrl: this.href,
+ 
+                    pageName: digitalData.page.pageName,
+                    siteSection: digitalData.page.siteSection,
+                    pageCategory: digitalData.page.pageCategory,
+                    pageType: digitalData.page.pageType,
+                    language: digitalData.page.language
+ 
+                }
+ 
+            });
+ 
+ 
+            /*
+             * Console - For Testing
+             */
+            console.log(
+                "Digital Data Layer:",
+                digitalData
+            );
+ 
+ 
+            /*
+             * Adobe Launch Direct Call
+             */
+            if (typeof _satellite !== "undefined") {
+                _satellite.track("get-started-click");
+            }
+ 
         });
-      }
-    });
-  </script>
-
+ 
+    </script>
+ 
 </body>
 </html>
-
