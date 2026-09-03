@@ -32,11 +32,14 @@
   </script>
   <!-- ADOBE CLIENT DATA LAYER END -->
 
-  <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script>
+  <script src="https://assets.adobedtm.com/21b53c73144b/0ae700d1ec93/launch-1e41035aaf34-development.min.js" async></script> 
 </head>
+
 <body>
+
   <header>
     <h1>Recommended Books</h1>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="genres.html">Genres</a>
@@ -46,32 +49,107 @@
   </header>
 
   <main>
+
     <section class="recommendations-grid">
+
       <!-- Example book items -->
+
       <div class="book-card">
         <h3>The Midnight Library</h3>
         <p>By Matt Haig</p>
       </div>
+
+      <!-- DUNE CTA -->
       <div class="book-card">
         <h3>Dune</h3>
         <p>By Frank Herbert</p>
+
+        <button id="dune-cta" type="button">
+          Next
+        </button>
       </div>
+
       <div class="book-card">
         <h3>Circe</h3>
         <p>By Madeline Miller</p>
       </div>
+
       <div class="book-card">
         <h3>Project Hail Mary</h3>
         <p>By Andy Weir</p>
       </div>
+
     </section>
+
   </main>
 
   <footer>
     <p>© 2025 Book Recommender</p>
   </footer>
 
+  <script>
+
+    /*
+     * DUNE CTA
+     * Test transaction data
+     *
+     * T001 -> 1 purpose code
+     * T002 -> 2 purpose codes
+     * T003 -> 2 purpose codes
+     * T004 -> 3 purpose codes
+     * T005 -> 1 purpose code
+     * T006 -> 2 purpose codes
+     * T007 -> 4 purpose codes
+     */
+
+    document.getElementById("dune-cta").addEventListener("click", function () {
+
+      adobeDataLayer.push({
+        event: "next_cta_click",
+
+        transactionData: [
+          {
+            transactionId: "T001",
+            purposeCodes: ["P01"]
+          },
+          {
+            transactionId: "T002",
+            purposeCodes: ["P01", "P02"]
+          },
+          {
+            transactionId: "T003",
+            purposeCodes: ["P01", "P02"]
+          },
+          {
+            transactionId: "T004",
+            purposeCodes: ["P01", "P02", "P03"]
+          },
+          {
+            transactionId: "T005",
+            purposeCodes: ["P01"]
+          },
+          {
+            transactionId: "T006",
+            purposeCodes: ["P01", "P02"]
+          },
+          {
+            transactionId: "T007",
+            purposeCodes: ["P01", "P02", "P03", "P04"]
+          }
+        ]
+
+      });
+
+      console.log(
+        "Adobe Data Layer pushed:",
+        adobeDataLayer[adobeDataLayer.length - 1]
+      );
+
+    });
+
+  </script>
+
   <script src="script.js"></script>
+
 </body>
 </html>
-
